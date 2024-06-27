@@ -1,5 +1,6 @@
-import { Metadata } from "next"
-import { LP_GRID_ITEMS } from "lp-items"
+import { Metadata } from "next";
+import { LP_GRID_ITEMS } from "lp-items";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Kilbeacanty Boilerplate",
@@ -33,12 +34,21 @@ export default function Web() {
           </div>
         </div>
       </section>
+      <section>
+      <Image
+        src="/images/Duck.png"
+        alt="hero image"
+        className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        width={300}
+        height={300}
+      />
+      </section>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
               <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
+                <div className="mb-4 flex size-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:size-12">
                   {singleItem.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-bold dark:text-white">{singleItem.title}</h3>
