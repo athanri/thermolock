@@ -31,15 +31,6 @@ export default function Web() {
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eius illo voluptates fuga aspernatur eos voluptatum placeat quis, aliquam quo ab iste ullam, accusamus tenetur commodi adipisci dignissimos eaque optio?
             </p>
-            <Button href="#" className="mr-3">
-              Get started
-            </Button>
-            <Button
-              href="#"
-              intent="secondary"
-            >
-              Contact Us
-            </Button>
           </div>
         </div>
       </section>
