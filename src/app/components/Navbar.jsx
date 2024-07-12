@@ -32,10 +32,10 @@ const Navbar = () => {
           className="text-2xl md:text-5xl text-white font-semibold"
         >
           <Image 
-            src="/images/PJLogo.webp" 
-            alt="Logo Pierce"
-            width={100}
-            height={100}
+            src="/images/TLLogo.webp" 
+            alt="Logo Thermolock"
+            width={75}
+            height={75}
           ></Image>
         </Link>
         <div className="mobile-menu block md:hidden">
