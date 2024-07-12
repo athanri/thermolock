@@ -25,17 +25,17 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#FFCC33] top-0 left-0 right-0 z-10 bg-[#0000FF] bg-opacity-100">
+    <nav className="fixed mx-auto border border-[#FFCC33] top-0 left-0 right-0 z-10 bg-[#00008B] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-5xl text-[#FFCC33] font-semibold"
         >
           <Image 
             src="/images/TLLogo.webp" 
             alt="Logo Thermolock"
-            width={75}
-            height={75}
+            width={65}
+            height={65}
           ></Image>
         </Link>
         <div className="mobile-menu block md:hidden">
