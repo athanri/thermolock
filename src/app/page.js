@@ -1,7 +1,6 @@
 import ShopSection from "./components/ShopSection";
 import Navbar from "./components/Navbar";
 import CustomSection from "./components/CustomSection";
-import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
       <div className="container mt-24 mx-auto px-12 py-4">
         <ShopSection />
         <CustomSection />
-        <EmailSection />
       </div>
       <Footer />
     </main>
