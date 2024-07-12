@@ -7,6 +7,23 @@ import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+  const fileInput = document.getElementById("fileInput"); // Replace with your HTML element ID
+  if (fileInput) {
+    const file = fileInput.files[0];
+
+    const formData = new FormData();
+    formData.append("file", file);
+  
+    fetch("./api/uploads", {
+      method: "POST",
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+  }
+
+
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -50,15 +67,12 @@ const EmailSection = () => {
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
-        </p>
+          <h1 className="text-white mb-4 text-3xl sm:text-3xl lg:text-5xl lg:leading-normal font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+              Contact Us.
+            </span>
+            <br></br>
+          </h1>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/athanri">
             <Image src={GithubIcon} alt="Github Icon" />
@@ -137,6 +151,21 @@ const EmailSection = () => {
                 placeholder="Let's talk about..."
               />
             </div>
+            <div className="mb-6">
+              <label
+                htmlFor="file"
+                className="text-white block text-sm mb-2 font-medium"
+              >
+                Message
+              </label>
+              <input
+                name="file"
+                type="file"
+                id="fileInput"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"

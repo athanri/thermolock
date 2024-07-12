@@ -1,11 +1,28 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import path from "path";
+import { writeFile } from "fs/promises";
 
 const resend = new Resend('re_XuLdNG35_4XvjDeYCX9U7L8jhvZVLhhKu');
 
 export async function POST(req, res) {
   const { email, subject, message, from, name } = await req.json();
+  const formData = await req.formData();
+
+  const file = formData.get("file");
+  if (!file) {
+    return NextResponse.json({ error: "No files received." }, { status: 400 });
+  }
+
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const filename =  file.name.replaceAll(" ", "_");
+  console.log(filename);
+
   try {
+    await writeFile(
+      path.join(process.cwd(), "public/uploads/" + filename),
+      buffer
+    );
     const data = await resend.emails.send({
       from: "admin@piercej.com",
       to: ["piercejord@gmail.com", email],
