@@ -34,9 +34,11 @@ const Navbar = () => {
           <Image 
             src="/images/TLLogo.webp" 
             alt="Logo Thermolock"
-            width={65}
-            height={65}
+            className="mx-auto"
+            width={50}
+            height={50}
           ></Image>
+        <p className="text-2xl md:text text-[#FFCC33]">Thermolock</p>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
