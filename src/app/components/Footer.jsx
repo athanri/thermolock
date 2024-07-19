@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container p-12 flex justify-between">
         <span>
           <Image 
-            src="/images/PJLogo.webp" 
+            src="/images/TLLogo.png" 
             alt="Logo Pierce"
             width={65}
             height={65}
